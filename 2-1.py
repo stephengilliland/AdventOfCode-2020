@@ -1006,21 +1006,16 @@ char = ""
 goodPws = 0
 password = ""
 
+for x in range(len(passwords)):
 
-for x in xrange(len(passwords)):
     currPassword = passwords[x]
     minimum = int(currPassword[ : currPassword.index("-")])
     maximum = int(currPassword[currPassword.index("-")+1 : currPassword.index(":")-2])
     char = currPassword[currPassword.index(" ")+1 : currPassword.index(":")]
     password = currPassword[currPassword.index(":"):]
-    print(currPassword)
-    print("min =", minimum)
-    print("max =", maximum)
-    print("char =", char)
-    print("count =",password.count(char))
+
     if password.count(char) >= minimum and password.count(char) <= maximum:
         goodPws += 1
-        print("Good Pass")
 
 print(goodPws)
 

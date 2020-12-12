@@ -901,31 +901,21 @@ seats = [[1,1,1,0,1,0,0,1,0,0,],
 [0,1,0,1,0,0,0,1,1,0,],
 [0,1,1,0,0,1,0,0,0,0,]]
 
-1100110
-
-ftb = 0
-ltr = 0
-row = "0b"
-col = "0b"
+seatBinary = "0b"
 maxSeat = 0
 currSeat = 0
 
 for seat in seats:
-    for x in range(0, 7):
-        row+=str(seat[x])
-        print("row", row)
-    #ftb = int(map(bin,bytearray(row)))
-    ftb = int(row, 2)
-    print("ftb", ftb)
-    print(row)
-    for x in range(7, len(seat)):
-        col+=str(seat[x])
-    #ltr = int(map(bin,bytearray(col)))
-    ltr = int(col, 2)
 
-    currSeat = ftb*8 + ltr
+    for x in range(len(seat)):
+        seatBinary+=str(seat[x])
+
+    currSeat = int(seatBinary, 2)
+
     if currSeat > maxSeat:
         maxSeat = currSeat
+
+    seatBinary = "0b"
     row = "0b"
     col = "0b"
 print(maxSeat)
