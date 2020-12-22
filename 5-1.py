@@ -909,12 +909,9 @@ for seat in seats:
 
     for x in range(len(seat)):
         seatBinary+=str(seat[x])
-
     currSeat = int(seatBinary, 2)
-
     if currSeat > maxSeat:
         maxSeat = currSeat
-
     seatBinary = "0b"
     row = "0b"
     col = "0b"
